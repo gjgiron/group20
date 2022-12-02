@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
+})->middleware('auth');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
 
 Route::get('/testing', function () {
@@ -23,7 +27,7 @@ Route::get('/testing', function () {
 
 Route::get('/reservations', function () {
     return view('reservations');
-});
+})->middleware('auth');
 
 Route::get('/reservingTable', function () {
     return view('reservingTable');
@@ -31,4 +35,7 @@ Route::get('/reservingTable', function () {
 
 Route::get('/userProfile', function () {
     return view('userProfile');
-});
+})->middleware('auth');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
