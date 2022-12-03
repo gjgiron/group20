@@ -12,6 +12,7 @@
                     <div class="card-header">Hello User!</div>
                 @endif
                 <div class="card-header">{{ __('Dashboard') }}</div>
+                <a href="/reservingTable">Reserve a table</a>
             </div>
         </div>
     </div>

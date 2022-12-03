@@ -38,4 +38,9 @@ Route::get('/userProfile', function () {
 })->middleware('auth');
 Auth::routes();
 
+
+Route::get('/successfulreservation', function () {
+    return view('successfulreservation');
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
